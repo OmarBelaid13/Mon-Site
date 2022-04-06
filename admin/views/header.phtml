@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- ===================== METAS =================================== -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+        <!-- ===================== FONTAWESOME =============================== -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <!-- ========================= GOOGLE FONTS ========================== -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+
+        <!-- ========================= DEVICON ============================== -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+        <!-- ========================= JQUERY ============================== -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <!-- =========================== CSS ================================= -->
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style.css">
+
+        <title>Admin Omar BELAID</title>
+    </head>
+
+    <body>
+        <header class="main_h">
+            <div class="row">
+                <a class="logo" href="index.php"><img class="logo_mobile" src="../img/logo/ob_logo_crop.png" alt="logo"></a>
+                <?php if (!empty($_SESSION)) : ?>
+                    <nav class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </nav>
+
+                    <nav>
+                        <a href="index.php"><img class="logo_nav" src="../img/logo/ob_logo_blanc.png" alt="logo"></a>
+                        <ul>
+                            <li><a href="index.php?controller=admin&action=disconnect" class="lien_presentation">Se déconnecter</a></li>
+                        </ul>
+                    </nav>
+                <?php endif; ?>
+            </div> <!-- / row -->
+        </header>
+            <div class="hero">
+                <div class="revelation fadeInUp header_text">
+                    <h1 class="logo_center"><?= $pageTitle ?></h1>
+                    <h2><?= $pageSubtitle ?></h2>
+                </div>
+                <div class="arrow"></div>
+                <video autoplay loop muted>
+                    <source src=" ../img/video/Golden.mp4" type="video/mp4">
+                    Désolé, votre navigateur ne peux pas lire cette vidéo.
+                </video>
+            </div>
+            

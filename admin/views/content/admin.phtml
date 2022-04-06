@@ -1,0 +1,80 @@
+        <main>
+            <?php if (!empty($_SESSION)) : ?>
+                <section class="contact table">
+                    <article>
+                        <h2 class="titre_homepage">Messages.</h2>
+                        <p>Consulte ou supprime les messages reçus.</p>
+                        <div class="separation"></div>
+                        <?php if (!empty($contacts)) : ?>
+                            <form action="index.php?controller=admin&action=delete_messages" method="POST" class="form_del revelation animation fadeInUp" id="form_delete">
+                                <table class="table_contact" id="table_messages">
+                                    <thead>
+                                        <tr>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th>Email</th>
+                                            <th>Message</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($contacts as $contact) : ?>
+                                            <tr>
+                                                <td><?= $contact->nom ?> </td>
+                                                <td><?= $contact->prenom ?></td>
+                                                <td><?= $contact->email ?></td>
+                                                <td><?= $contact->message ?></td>
+                                                <td><?= $contact->created_at ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                                <button type="submit" name="delete" id="delete" class="delete">Supprimer tous les messages</button>
+                            </form>
+                        <?php else : ?>
+                            <p>Pas de message. Pas d'amis.</p>
+                        <?php endif ?>
+                        <div class="message_succes_delete">
+                            <p>Les messages ont étés supprimés !</p>
+                        </div>
+                    </article>
+                </section>
+                <section class="contact">
+                    <article>
+                        <div class="form_contact">
+                            <h2 class="titre_homepage">Contenu.</h2>
+                            <p>Modifie le texte de présentation.</p>
+                            <div class="separation"></div>
+                            <form action="index.php?controller=admin&action=update_text" method="POST" class="form_contenu revelation animation fadeInUp" id="update_form">
+                                <small class="small_error_message"></small>
+                                <textarea name="contenu" id="contenu" placeholder="Contenu."><?= $presentation->contenu ?></textarea>
+                                <button type="submit" name="update" id="update">Mettre à jour</button>
+                            </form>
+                        </div>
+                        <div class="message_succes">
+                            <p>Le contenu à été modifié.</p>
+                        </div>
+                    </article>
+                </section>
+            <?php else        : ?>
+                <section class="contact">
+                    <article>
+                        <div class="form_contact">
+                            <h2 class="sec04 titre_homepage">Connexion administrateur.</h2>
+                            <p>Merci entrer les informations de connexion.</p>
+                            <div class="separation"></div>
+                            <p class = "alerte"><?= $messageChampsVides ?></p>
+                            <form action="index.php?controller=admin&action=connexion_admin" method="POST" class="form_return revelation animation fadeInUp" id="form_connexion_admin">
+                                <small class="admin_small_error_nom"></small>
+                                <input type="text" name="name" id="name" placeholder="Nom.">
+
+                                <small class="admin_small_error_password"></small>
+                                <input type="password" name="password" id="password" placeholder="Password.">
+                                <button type="submit" id="bouton_validation_connexion_admin">Se connecter</button>
+                            </form>
+                        </div>
+                    </article>
+                </section>
+            <?php endif ?>
+        </main>
+        
