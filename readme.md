@@ -1,2 +1,1 @@
-Bonjour à tous.
-Test maj
+Voici mon site.
