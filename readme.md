@@ -1,1 +1,2 @@
-Bonjour à tous
+Bonjour à tous.
+Test maj
