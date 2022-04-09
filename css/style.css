@@ -822,7 +822,7 @@ footer p:first-child {
 }
 
 .fa-linkedin,
-.fa-twitter-square {
+.fa-github {
   transition: all 0.3s ease;
 }
 
@@ -830,7 +830,7 @@ footer p:first-child {
   transform: scale(1.1);
 }
 
-.fa-twitter-square:hover {
+.fa-github:hover {
   transform: scale(1.1);
 }
 
