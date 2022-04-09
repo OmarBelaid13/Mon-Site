@@ -81,7 +81,7 @@ class AdminController extends Controller
         utf8_encode($contenu);
         // Call method for to update content
         $this->model->updateText($contenu);
-    }
+    } 
 
     /**
      * Disconnect admin 

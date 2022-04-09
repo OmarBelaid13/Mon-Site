@@ -17,17 +17,30 @@ class AdminModel extends Model
      */
     public function adminConnexion(array $params)
     {
-        
+        // echo '<pre>';
+        // var_dump('Model param L22', $params);
+        // //die();
+        // echo '</pre>';
         $admin = $this->findByName($params['name']);
-        
+        // echo '<pre>';
+        // var_dump('Model admin L29!', $admin);
+        // //die();
+        // echo '</pre>';
         if (empty($params)) {
-            
+            die('Model L33');
+            // Si l'utilisateur est vide => L'utilisateur n'existe pas en base de données
+            // => On renvoie l'utilisateur sur le formulaire
             $_SESSION['error'] = "Ce nom d'utilisateur n'existe pas";
 
             header('Location: index.php?controller=admin&action=show_admin');
             exit();
         } else {
-            
+            // echo '<pre>';
+            // var_dump('Model SESSION  L42', $_SESSION);
+            // // die();
+            // echo '</pre>';
+            // die('Model L45');
+        
             // L'utilisateur existe bien => on vérifie si son mot de passe correspond à celui qui a été tapé
             // Est-ce que le mot de passe du formulaire correspond à celui en base de données
             if (strcmp($params['password'], $admin->password) == 0) {
@@ -38,6 +51,11 @@ class AdminModel extends Model
                     'name' => $admin->name,
                     'email' => $admin->password,
                 ];
+                // echo '<pre>';
+                // var_dump('$_SESSION mdp ok L58', $_SESSION);
+                // // die();
+                // echo '</pre>';
+                // Une fois que l'utilisateur est connecté on le rediriger vers la page d'accueil
                 header('Location: index.php');
                 exit();
             } else {
@@ -61,16 +79,28 @@ class AdminModel extends Model
      */
     public function findByName(string $name): object
     {
+        // echo '<pre>';
+        // var_dump('Model name L75', $name);
+        // //die();
+        // echo '</pre>';
+        // Execution of the request
         
         $requete = $this->db->prepare(
             'SELECT id, name, password FROM admin
             WHERE name = :name'
         );
-    
+        echo '<pre>';
+        var_dump('Model requete L85', $requete);
+        //die();
+        echo '</pre>';
         $requete->execute([':name' => $name]);
-    
-        $admin = $requete->fetch();
+            
         
+
+        $admin = $requete->fetch();
+        echo '<pre>';
+        var_dump($admin);
+        echo '</pre>';
         if ($admin === false) {
             return [];
         } else {
@@ -182,8 +212,13 @@ class AdminModel extends Model
 
         $modelSession->stopSession();
         
+        // echo '<pre>';
+        // var_dump('$_SESSION L215', $_SESSION);
+        // die();
+        // echo '</pre>';
         $_SESSION['error'] = "";
         header('Location: index.php');
         exit();
     }
 }
+
