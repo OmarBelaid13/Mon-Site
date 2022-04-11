@@ -89,10 +89,10 @@ HEADER
   font-family: 'Nothing You Could Do', cursive;
 }
 
-.hero h2 {
+.hero span {
   text-align: center;
   font-size: 8rem;
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .main_h {
@@ -166,6 +166,16 @@ video {
   width: 100%;
   min-height: inherit;
 }
+
+/* Animation du titre site */
+.blinking-cursor {
+  user-select: none;
+  animation: blink 1s steps(2, start) infinite; }
+
+@keyframes blink {
+  to {
+    visibility: hidden; } }
+
 
 /***************************************************************** 
 NAV
@@ -1206,9 +1216,9 @@ MEDIAS QUERIES
     display: none;
   }
 
-  .hero h2 {
+  .hero span {
     text-align: center;
-    font-size: 6rem;
+    font-size: 3rem;
     padding: 2rem 0;
   }
   .sticky {
@@ -1349,7 +1359,8 @@ MEDIAS QUERIES
     font-size: 5rem;
     font-weight: bold;
     line-height: 1.3;
-    padding-top: 3rem;
+    padding-top: 18rem;
+    padding-bottom: 7rem;
   }
 
   .hero h2 {

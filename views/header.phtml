@@ -17,6 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
 
     <!-- ===================== FAVICON =================================== -->
     <link rel="icon" href="img/favicon/favicon-32x32.png" />
@@ -65,7 +67,8 @@
     <div class="hero">
         <div class="revelation fadeInUp header_text">
             <h1 class="logo_center"><?= $pageTitle ?></h1>
-            <h2><?= $pageSubtitle ?></h2>
+            <span is="type-async" id="type-text">...</span>
+            <span class="blinking-cursor">_</span>
         </div>
         <div class="arrow"></div>
         <video autoplay loop muted>
