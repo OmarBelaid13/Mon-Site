@@ -63,6 +63,10 @@ HEADER
   padding: 5rem 2% 25rem;
 }
 
+.image_video {
+  display: none;
+}
+
 .hero {
   position: relative;
   /* background: url('../img/pen-4337521_1920.jpg') no-repeat center fixed; */
@@ -1306,6 +1310,19 @@ MEDIAS QUERIES
 @media screen and (max-width: 600px) {
   /* HEADER */
 
+  .video {
+    display: none;
+  }
+
+  .image_video {
+    display: block;
+  }
+
+  .hero {
+    position: static;
+    background-image: url(../img/golden_image.jpg);
+  }
+
   .hero h1 {
     font-size: 6rem;
   }
@@ -1344,10 +1361,6 @@ MEDIAS QUERIES
   }
 
   /* HEADER */
-
-  .hero {
-      position: static;
-  }
 
   nav ul {
     flex-direction: column;
