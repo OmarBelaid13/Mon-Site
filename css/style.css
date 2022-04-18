@@ -90,14 +90,16 @@ HEADER
   animation-name: scroll;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.hero h2 {
+  font-size: 9rem;
+  font-weight: bold;
+  line-height: 1.3;
   font-family: 'Nothing You Could Do', cursive;
 }
 
-.hero span {
-  text-align: center;
-  font-size: 8rem;
-  font-family: 'IBM Plex Mono', monospace;
-}
 
 .main_h {
   display: flex;
@@ -170,15 +172,6 @@ video {
   width: 100%;
   min-height: inherit;
 }
-
-/* Animation du titre site */
-.blinking-cursor {
-  user-select: none;
-  animation: blink 1s steps(2, start) infinite; }
-
-@keyframes blink {
-  to {
-    visibility: hidden; } }
 
 
 /***************************************************************** 
@@ -1168,6 +1161,11 @@ ANIMATIONS
 /*****************************************************************
 MEDIAS QUERIES
 *****************************************************************/
+@media only screen and (max-width: 1001px) {
+  .hero h1 {
+    font-size: 8rem;
+  }
+}
 @media only screen and (max-width: 870px) {
   nav ul li {
     font-size: 1.5rem;
@@ -1182,6 +1180,14 @@ MEDIAS QUERIES
 
 @media only screen and (max-width: 780px) {
   /* HEADER & NAV */
+  .hero h1 {
+    font-size: 7rem;
+  }
+
+  .hero h2 {
+    font-size: 7rem;
+  }
+
   .main_h {
     padding-top: 5px;
   }
@@ -1220,11 +1226,11 @@ MEDIAS QUERIES
     display: none;
   }
 
-  .hero span {
+  /* .hero span {
     text-align: center;
     font-size: 3rem;
     padding: 2rem 0;
-  }
+  } */
   .sticky {
     top: -10px;
 }
@@ -1307,6 +1313,16 @@ MEDIAS QUERIES
   }
 }
 
+@media only screen and (max-width: 655px) {
+  .hero h1 {
+    font-size: 6rem;
+  }
+
+  .hero h2 {
+    font-size: 6rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   /* HEADER */
 
@@ -1320,12 +1336,17 @@ MEDIAS QUERIES
 
   .hero {
     position: static;
-    background-image: url(../img/golden_image.jpg);
+    background-image: url(../img/blue-gradient.jpg);
   }
 
   .hero h1 {
-    font-size: 6rem;
+    font-size: 4rem;
   }
+
+  .hero h2 {
+    font-size: 4rem;
+  }
+
   /* EXPERIENCE */
   #timeline .event .left {
     display: none;
@@ -1361,7 +1382,7 @@ MEDIAS QUERIES
   }
 
   /* HEADER */
-
+  
   nav ul {
     flex-direction: column;
     align-items: center;
@@ -1369,7 +1390,7 @@ MEDIAS QUERIES
   }
 
   .hero h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     line-height: 1.3;
     padding-top: 8rem;
