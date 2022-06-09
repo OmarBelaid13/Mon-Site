@@ -340,7 +340,7 @@ PRESENTATION
 .text {
   width: 50%;
   display: block;
-  border-radius: 39px;
+  border-radius: 73px;
   padding: 30px;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 16%);
   background: #eaeaea;
@@ -354,7 +354,7 @@ PRESENTATION
   display: block;
   width: 100%;
   margin: 0 auto;
-  border-radius: 39px;
+  border-radius: 73px;
   box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 50%);
 }
 
